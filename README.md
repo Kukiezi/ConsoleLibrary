@@ -1,2 +1,2 @@
 # ConsoleLibrary
-Created as example for Bootcampers to learn from.
+Bootcamp task I completed to use as example when teaching beginner programmers about OOP.
