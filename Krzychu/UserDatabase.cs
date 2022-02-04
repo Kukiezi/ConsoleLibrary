@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Krzychu
 {
-    public sealed class UserDatabase
+    public sealed class UserDatabase: IUserDatabase
     {
         private List<User> users = new List<User>();
 

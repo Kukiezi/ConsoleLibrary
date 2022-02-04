@@ -51,7 +51,16 @@ namespace Krzychu
 
         public override void Write(Utf8JsonWriter writer, List<Book> value, JsonSerializerOptions options)
         {
-            throw new NotImplementedException();
+			writer.WriteStartArray();
+			foreach (var book in value)
+            {
+				writer.WriteStartObject();
+				writer.WriteString(nameof(book.Title), book.Title);
+				writer.WriteString(nameof(book.Author), book.Author);
+				writer.WriteString(nameof(book.Type), book.Type.ToString());
+				writer.WriteEndObject();
+			}
+			writer.WriteEndArray();
         }
     }
 }

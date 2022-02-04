@@ -19,12 +19,14 @@ namespace Krzychu
                 switch (GetUserChoice())
                 {
                     case 1:
-                        library.AddBook(library.CreateBook());
-                        string jsonLibrary = JsonSerializer.Serialize(library.library);
+                        library.AddBook(new BookBuilder().Build());
+                        var options = new JsonSerializerOptions();
+                        options.Converters.Add(new BookTypeJsonConverter());
+                        string jsonLibrary = JsonSerializer.Serialize(library.books, options);
                         File.WriteAllText(Program.jsonLocation, jsonLibrary);
                         break;
                     case 2:
-                        library.ShowFoundBooks(library.ChooseType());
+                        library.ShowFoundBooks(ConsoleUtils.ChooseType());
                         break;
                     case 3:
                         library.DeleteBook();

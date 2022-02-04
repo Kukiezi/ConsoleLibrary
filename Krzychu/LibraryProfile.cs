@@ -8,12 +8,12 @@ namespace Krzychu
 {
     public class LibraryProfile
     {
-        private List<Book> favouriteBooks = new List<Book>();
+        private List<Book> borrowedBooks = new List<Book>();
 
         public void BorrowBook(Book book)
         {
             Console.Clear();
-            favouriteBooks.Add(book);
+            borrowedBooks.Add(book);
             Console.WriteLine("Pomyślnie dodano ksiąkę, nacisnij dowolny przycisk aby powrócić do menu");
             Console.ReadKey();
             Console.Clear();
@@ -23,7 +23,7 @@ namespace Krzychu
         {
             Console.Clear();
             Console.WriteLine("Wypożyczane książki: ");
-            foreach (var book in favouriteBooks)
+            foreach (var book in borrowedBooks)
             {
                 Console.WriteLine($"{book.Title} {book.Author} {book.Type}");
             }

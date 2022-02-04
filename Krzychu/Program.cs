@@ -27,7 +27,7 @@ namespace Krzychu
             // BookTypeJsonConverter is a custom JsonDeserializer. Needed it to match json string Type to BookType
             var options = new JsonSerializerOptions();
             options.Converters.Add(new BookTypeJsonConverter());
-            p.library.library = JsonSerializer.Deserialize<List<Book>>(jsonLibraryFromFile, options);
+            p.library.books = JsonSerializer.Deserialize<List<Book>>(jsonLibraryFromFile, options);
             p.ShowMenu();
         }
 

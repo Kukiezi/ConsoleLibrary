@@ -18,10 +18,10 @@ namespace Krzychu
                 switch (GetUserChoice())
                 {
                     case 1:
-                        library.ShowFoundBooks(library.ChooseType());
+                        library.ShowFoundBooks(ConsoleUtils.ChooseType());
                         break;
                     case 2:
-                        profile.BorrowBook(library.MoveFromLibraryToBorrowed());
+                        profile.BorrowBook(library.GetBookFromConsole<Book>());
                         break;
                     case 3:
                         profile.ShowBorrowedBooks();

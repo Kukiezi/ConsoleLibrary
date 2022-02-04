@@ -8,7 +8,7 @@ namespace Krzychu
 {
     static class UserService
     {
-        static UserDatabase userDatabase = UserDatabase.GetInstance();
+        static IUserDatabase userDatabase = UserDatabase.GetInstance();
         private static User currentUser;
 
         public static User GetLoggedInUser()
